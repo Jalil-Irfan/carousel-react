@@ -1,0 +1,114 @@
+*,
+*:before,
+*:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-height: 100vh;
+  overflow-x: scroll;
+}
+
+.carousel {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  opacity: 0.5;
+  transition: all 2s ease-in-out;
+  background-repeat: no-repeat;
+  width: 0;
+
+}
+
+.carousel-item.active {
+  opacity: 1;
+  width: 100%;
+}
+
+.carousel-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-nav__button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.carousel-nav__button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-nav__button--prev {
+  margin-right: auto;
+  border-radius: 0 10px 10px 0;
+}
+
+.carousel-nav__button--next {
+  margin-left: auto;
+  border-radius: 10px 0 0 10px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.carousel-indicator.active {
+  background-color: #fff;
+}
+
+.carousel-nav__button:disabled {
+  display: none;
+}
+
+
